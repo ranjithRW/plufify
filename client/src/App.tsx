@@ -9,6 +9,7 @@ export default function App() {
   const [file, setFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [resultUrl, setResultUrl] = useState<string | null>(null);
+  const [downloadName, setDownloadName] = useState<string>('plushie.png');
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -55,6 +56,8 @@ export default function App() {
 
       const mimeType = json.mimeType || file.type || 'image/png';
       setResultUrl(`data:${mimeType};base64,${json.b64_json}`);
+      const base = (file.name || 'upload').replace(/\.[^.]+$/, '');
+      setDownloadName(`${base}-plushie.png`);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Something went wrong.');
     } finally {
@@ -109,6 +112,12 @@ export default function App() {
         <button className="primaryBtn" disabled={!file || loading} onClick={onConvert}>
           {loading ? 'Plushifying...' : 'Plushify!'}
         </button>
+
+        {resultUrl ? (
+          <a className="secondaryBtn" href={resultUrl} download={downloadName}>
+            Download plushie image
+          </a>
+        ) : null}
 
         {error ? (
           <div className="errorBox" role="alert">

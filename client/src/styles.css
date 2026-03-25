@@ -122,6 +122,26 @@ h1 {
   background: var(--primaryHover);
 }
 
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 120ms ease;
+}
+
+.secondaryBtn:hover {
+  background: #f3f4f6;
+}
+
 .errorBox {
   margin-top: 12px;
   padding: 12px 14px;
