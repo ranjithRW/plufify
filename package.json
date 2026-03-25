@@ -1,0 +1,8 @@
+{
+  "name": "plufify",
+  "private": true,
+  "scripts": {
+    "setup": "npm install --prefix client && npm install --prefix server",
+    "dev": "npx concurrently -n client,server -c cyan,magenta \"npm run dev --prefix client\" \"npm run dev --prefix server\""
+  }
+}
