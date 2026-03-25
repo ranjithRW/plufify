@@ -68,7 +68,7 @@ export default function App() {
   return (
     <div className="page">
       <div className="card">
-        <h1>Plufify Plushie Creator</h1>
+        <h1>Plushie Creator</h1>
         <p className="subtitle">
           Upload a photo and get a cozy, adorable plushie-style result.
         </p>

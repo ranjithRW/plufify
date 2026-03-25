@@ -1,4 +1,4 @@
-# Plufify Plushie Creator
+# Plushie Creator
 
 React frontend + Node/Express backend that turns an uploaded image into an adorable plushie-style image using OpenAI.
 
